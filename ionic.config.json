@@ -1,0 +1,7 @@
+{
+  "name": "app-premium",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
