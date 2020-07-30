@@ -1,22 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Prueba App Encabezado
+    <ion-button color="warning">
+        <ion-icon slot="end" name="start"></ion-icon>
+    </ion-button>
+    <ion-title slot="start">
+      Cartagena Premium
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <h1>Hola</h1>
-    <ion-h1>Prueba de titulo</ion-h1>
-    <p>Prueba de parrafo</p>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Prueba App</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card color="warning">
+    <ion-card-header>
+      <ion-card-title>Chek-In</ion-card-title>
+    </ion-card-header>
+  <ion-card-content>
+    Registrate antes de llegar a el hotel.
+  </ion-card-content>
+</ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Chek-Out</ion-card-title>
+  </ion-card-header>
+<ion-card-content>
+  Generar tu Chek-Out antes de llegar al loby con 30 minutos de anticipo.
+</ion-card-content>
+</ion-card>
+<ion-card color="warning">
+  <ion-card-header>
+    <ion-card-title>Pagos</ion-card-title>
+  </ion-card-header>
+<ion-card-content>
+  Realiza el pago de tu factura o de tu contenido. 
+</ion-card-content>
+</ion-card>
+
 </ion-content>
 
 <ion-footer>
@@ -26,6 +45,3 @@
     </ion-title>
   </ion-toolbar>
 </ion-footer>
-
-<!--
--->
