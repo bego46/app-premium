@@ -1,57 +1,99 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      User Details
     </ion-title>
   </ion-toolbar>
 </ion-header>
- 
-<ion-content [fullscreen]="true">
 
-  
+<ion-content>
+  <form  (ngSubmit)="submit()" [formGroup]="registrationForm">
 
-  <ion-item color="warning">
-    <ion-label position="floating">No. Reserva</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+    <ion-list>
 
-  <ion-item color="warning">
-    <ion-label position="floating">Nombres</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="name" autocapitalize inputmode="text"></ion-input>
+      </ion-item>
+      <div ngFor="let error of errorMessages.name">
+        <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
 
-  <ion-item color="warning">
-    <ion-label position="floating">Apellidos</ion-label>
-    <ion-input aria-placeholder="Apellidos"></ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input formControlName="phone" autocapitalize inputmode="text"></ion-input>
+      </ion-item>
+      <div ngFor="let error of errorMessages.phone">
+        <ng-container *ngIf="phone.hasError(error.type) && (phone.dirty || phone.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
 
-  <ion-item color="warning">
-    <ion-label position="floating">Pais / Ciudad</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" autocapitalize inputmode="text"></ion-input>
+      </ion-item>
+      <div ngFor="let error of errorMessages.email">
+        <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
 
-  <ion-item color="warning">
-    <ion-label position="floating">Direccion</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+    </ion-list>
+    <ion-list [formGroupName]="address">
 
-  <ion-item color="warning">
-    <ion-label position="floating">Telefono</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+      <ion-list-header>
+        <ion-label>Address</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label position="floating">Street</ion-label>
+        <ion-input formControlName="street"></ion-input>
+      </ion-item>
+      <div ngFor="let error of errorMessages.street">
+        <ng-container *ngIf="street.hasError(error.type) && (street.dirty || street.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">City</ion-label>
+        <ion-input formControlName="city"></ion-input>
+      </ion-item>
+      <div ngFor="let error of errorMessages.city">
+        <ng-container *ngIf="city.hasError(error.type) && (city.dirty || city.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">State</ion-label>
+        <ion-input formControlName="state"></ion-input>
+      </ion-item>
+      <div ngFor="let error of errorMessages.state">
+        <ng-container *ngIf="state.hasError(error.type) && (state.dirty || state.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Zip Code</ion-label>
+        <ion-input formControlName="zip"></ion-input>
+      </ion-item>
+      <div ngFor="let error of errorMessages.zip">
+        <ng-container *ngIf="zip.hasError(error.type) && (zip.dirty || zip.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
+
+      <ion-button [disabled]="!registrationForm.valid" type="submit" expand="block">
+        Submit
+        <ion-icon slot="end" name="create"></ion-icon>
+      </ion-button>
 
 
-
-  <ion-item color="success">
-    <ion-label position="fixed">Probando 1</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-
-  <ion-item color="danger">
-    <ion-label position="stacked">Probando 2</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-
- 
-  
+    </ion-list>
+  </form>
 </ion-content>
