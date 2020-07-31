@@ -1,3 +1,6 @@
+
+<!-- Encabezado -->
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -6,10 +9,19 @@
   </ion-toolbar>
 </ion-header>
  
-<ion-content [fullscreen]="true">
-  <!--<form onsubmit="processForm(event)">-->
+<!-- Contenido -->
 
-    <ion-item color="warning">
+<ion-content [fullscreen]="true">
+
+<!-- Titulo -->
+  <ion-title>
+    Chek In
+  </ion-title>
+
+  <!-- Formulario -->
+  <form>
+
+    <ion-item>
       <ion-label position="floating">
         No. Reserva 
         <ion-text color="danger">*</ion-text>
@@ -17,15 +29,15 @@
       <ion-input></ion-input>
     </ion-item>
 
-    <ion-item color="warning">
+    <ion-item>
       <ion-label position="floating">
-        Nombres
+        Nombres 
         <ion-text color="danger">*</ion-text>
       </ion-label>
       <ion-input></ion-input>
     </ion-item>
 
-    <ion-item color="warning">
+    <ion-item>
       <ion-label position="floating">
         Apellidos
         <ion-text color="danger">*</ion-text>
@@ -33,7 +45,7 @@
       <ion-input></ion-input>
     </ion-item>
 
-    <ion-item color="warning">
+    <ion-item>
       <ion-label position="floating">
         Pais / Ciudad
         <ion-text color="danger">*</ion-text>
@@ -41,7 +53,7 @@
       <ion-input></ion-input>
     </ion-item>
 
-    <ion-item color="warning">
+    <ion-item>
       <ion-label position="floating">
         Direccion
         <ion-text color="danger">*</ion-text>
@@ -49,23 +61,30 @@
       <ion-input></ion-input>
     </ion-item>
 
-    <ion-item color="warning">
+    <ion-item>
       <ion-label position="floating">
         Telefono
         <ion-text color="danger">*</ion-text>
       </ion-label>
       <ion-input></ion-input>
     </ion-item>
-
+    <!-- Boton -->
     <ion-footer>
       <ion-toolbar>
         <div class="ion-padding">
-          <ion-button expand="block" type="submit" class="ion-no-margin">Registrar</ion-button>
+          <ion-button expand="block" type="submit" class="ion-no-margin" (click)="(saveForm())" >
+            Registrar
+            <ion-icon slot="end" name="create"></ion-icon>
+          </ion-button>
         </div>
       </ion-toolbar>
     </ion-footer>
 
     
+  </form>
+  <!-- Fin del formulario -->
 
-  <!--</form>-->
+  <input type="text" [(ngModel)]="prueba">
+  {{prueba}}
+  <!-- Pie de pagina -->
 </ion-content>
