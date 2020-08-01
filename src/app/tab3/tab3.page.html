@@ -14,60 +14,45 @@
 <ion-content [fullscreen]="true">
 
 <!-- Titulo -->
-  <ion-title>
-    Chek In
-  </ion-title>
-
+  
   <!-- Formulario -->
-  <form>
 
+    <!-- No. reserva -->
     <ion-item>
       <ion-label position="floating">
-        No. Reserva 
+        No. de Reserva
         <ion-text color="danger">*</ion-text>
       </ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="formulario.reserva"></ion-input>
     </ion-item>
 
+    <!-- No. tarjeta -->
     <ion-item>
       <ion-label position="floating">
-        Nombres 
+        No. de Tarjeta
         <ion-text color="danger">*</ion-text>
       </ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="formulario.tarjeta"></ion-input>
     </ion-item>
 
+    <!-- Fecha -->
     <ion-item>
       <ion-label position="floating">
-        Apellidos
-        <ion-text color="danger">*</ion-text>
+        MM / DD
+        <ion-text color="danger"></ion-text>
       </ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="formulario.fecha"></ion-input>
     </ion-item>
-
+    
+    <!-- cvc -->
     <ion-item>
       <ion-label position="floating">
-        Pais / Ciudad
+        CVC
         <ion-text color="danger">*</ion-text>
       </ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="formulario.cvc"></ion-input>
     </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">
-        Direccion
-        <ion-text color="danger">*</ion-text>
-      </ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">
-        Telefono
-        <ion-text color="danger">*</ion-text>
-      </ion-label>
-      <ion-input></ion-input>
-    </ion-item>
+    
     <!-- Boton -->
     <ion-footer>
       <ion-toolbar>
@@ -80,11 +65,7 @@
       </ion-toolbar>
     </ion-footer>
 
-    
-  </form>
   <!-- Fin del formulario -->
-
-  <input type="text" [(ngModel)]="prueba">
-  {{prueba}}
-  <!-- Pie de pagina -->
 </ion-content>
+
+<!-- Pie de pagina -->

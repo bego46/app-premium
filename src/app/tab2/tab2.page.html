@@ -1,82 +1,92 @@
+<!-- Encabezado -->
+
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      User Details
+      NgModel
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- Contenido -->
+
+<ion-content padding>
+  <!-- Formulario -->
+
+  <!-- reserva -->
   
-  <form (ngSubmit)="submit()">
+  <ion-item>
+    <ion-label position="floating">
+      No. de reserva
+      <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input [(ngModel)]="variable.reserva"></ion-input>
+  </ion-item>
 
-    <ion-list>
+  <!-- nombres -->
 
-      <ion-item>
-        <ion-label position="floating">Name</ion-label>
-        <ion-input autocapitalize inputmode="text"></ion-input>
-      </ion-item>
-      <!-- <div ngFor="let error of errorMessages.name">
-        <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
-          <small class="error-message">{{error.message}}</small>
-        </ng-container>
-      </div> -->
+  <ion-item>
+    <ion-label position="floating">
+      Nombres
+      <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input [(ngModel)]="variable.nombre"></ion-input>
+  </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Phone</ion-label>
-        <ion-input autocapitalize inputmode="text"></ion-input>
-      </ion-item>
-      <!-- <div ngFor="let error of errorMessages.phone">
-        <ng-container *ngIf="phone.hasError(error.type) && (phone.dirty || phone.touched)">
-          <small class="error-message">{{error.message}}</small>
-        </ng-container>
-      </div> -->
+  <!-- apellidos -->
 
-      <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input autocapitalize inputmode="text"></ion-input>
-      </ion-item>
-      <!-- <div ngFor="let error of errorMessages.email">
-        <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
-          <small class="error-message">{{error.message}}</small>
-        </ng-container>
-      </div> -->
+  <ion-item>
+    <ion-label position="floating">
+      Apellidos
+      <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input [(ngModel)]="variable.apellidos"></ion-input>
+  </ion-item>
 
-    </ion-list>
-    <ion-list>
+  <!-- ubicacion -->
 
-      <ion-list-header>
-        <ion-label>Address</ion-label>
-      </ion-list-header>
+  <ion-item>
+    <ion-label position="floating">
+      Ciudad o Pais
+      <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input [(ngModel)]="variable.ubicacion"></ion-input>
+  </ion-item>
+  
+  <!-- direccion -->
+  
+  <ion-item>
+    <ion-label position="floating">
+      Direccion
+      <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input [(ngModel)]="variable.direccion"></ion-input>
+  </ion-item>
+  
+  <!-- telefono -->
+  
+  <ion-item>
+    <ion-label position="floating">
+      Telefono
+      <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input [(ngModel)]="variable.telefono"></ion-input>
+  </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Street</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <!-- <div ngFor="let error of errorMessages.street">
-        <ng-container *ngIf="street.hasError(error.type) && (street.dirty || street.touched)">
-          <small class="error-message">{{error.name.message}}</small>
-        </ng-container>
-      </div> -->
-
-      <ion-item>
-        <ion-label position="floating">City</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <!-- <div ngFor="let error of errorMessages.city">
-        <ng-container *ngIf="city.hasError(error.type) && (city.dirty || city.touched)">
-          <small class="error-message">{{error.message}}</small>
-        </ng-container>
-      </div> -->
-
-      <!-- [disabled]="!registrationForm.valid" -->
-      <ion-button  type="submit" expand="block">
-        Submit
-        <ion-icon slot="end" name="create"></ion-icon>
-      </ion-button>
+  <!-- Boton -->
+  
+  <ion-footer>
+    <ion-toolbar>
+      <div class="ion-padding">
+        <ion-button expand="block" type="submit" class="ion-no-margin" (click)="(saveForm())" >
+          Registrar
+          <ion-icon slot="end" name="create"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-toolbar>
+  </ion-footer>
 
 
-    </ion-list>
-  </form>
- 
 </ion-content>
+
+<!-- pie de pagina -->

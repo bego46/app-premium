@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { FormBuilder, Validators, FormsModule} from '@angular/forms';
+import { NavController } from '@ionic/angular';
 
 @NgModule({
   declarations: [],
@@ -7,7 +8,8 @@ import { FormBuilder, Validators, FormsModule} from '@angular/forms';
   imports: [
     FormBuilder,
     Validators,
-    FormsModule
+    FormsModule,
+    NavController
   ],
   providers: [],
   bootstrap: []
@@ -20,23 +22,22 @@ import { FormBuilder, Validators, FormsModule} from '@angular/forms';
 })
 export class Tab3Page {
 
-  public formulario : any;
-  public prueba : String;
+  public formulario  = {
+    reserva : "",
+    tarjeta : "",
+    fecha : "",
+    cvc : ""
+  }
 
-  constructor() {
+  constructor(public navCrl: NavController) {
     
   }
+
+
 // Funcion para guardar formulario
   saveForm(){
-    this.formulario = {
-      no_reserva : "",
-      nombres : "",
-      apellidos : "",
-      pais_ciudad : "",
-      direcion : "",
-      telefono : ""
-    }
     console.log(this.formulario);
   }
 
 }
+
